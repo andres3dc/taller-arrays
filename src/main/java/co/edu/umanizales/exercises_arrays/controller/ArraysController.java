@@ -46,20 +46,15 @@ public class ArraysController {
         return printRangeOfNumbers(array);
     }
 
-    private boolean isPrime(int number){
-        int contDiv = 0;
+    private boolean isPrime(int number) {
+        if (number < 2) return false;
         int half = number / 2;
-        for(int i = 2 ; i < half; i++){
-            if(number % i == 0){
-                contDiv++;
+        for (int i = 2; i <= half; i++) {
+            if (number % i == 0) {
+                return false;
             }
         }
-        if(contDiv == 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return true; 
     }
 
     private int sumArray(int[] array){
